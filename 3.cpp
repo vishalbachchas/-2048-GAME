@@ -1,10 +1,10 @@
 /*
 
 
-                       1024 GAME
+               2048 GAME
 
 
-    Created by Vishal Bachchas 2016/SE/092
+    Created by Vishal Bachchas 2K16/SE/092
 
 */
 #include <stdio.h>
