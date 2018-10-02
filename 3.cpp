@@ -16,23 +16,23 @@
 #include <vector>
 using namespace std;
  
-void up(int arr[])
+void up(int arrarrary[])
 {
     for (int i = 0; i < 3; ++i)
     {
         for (int j = 0; j < 2; ++j)
         {
-            if (arr[3*j+i])
+            if (arrarrary[3*j+i])
             {
                 int start=i+3*j+3;
                 while(true)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        if (arr[start]==arr[i+3*j])
+                        if (arrarrary[start]==arrarrary[i+3*j])
                         {
-                            arr[i+3*j]*=2;
-                            arr[start]=0;
+                            arrarrary[i+3*j]*=2;
+                            arrarrary[start]=0;
                         }
                         else break;
                     }
@@ -49,10 +49,10 @@ void up(int arr[])
                 int start=i+3*j+3;
                 while(start < 9)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        arr[i+3*j]=arr[start];
-                        arr[start]=0;
+                        arrarrary[i+3*j]=arrarrary[start];
+                        arrarrary[start]=0;
                         break;
                     }
                     start+=3;
@@ -62,7 +62,7 @@ void up(int arr[])
     }
 }
  
-void down(int *arr)
+void down(int *arrarrary)
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -71,16 +71,16 @@ void down(int *arr)
             int cur=3*j+i;
             int start=3*j+i-3;
  
-            if (arr[cur])
+            if (arrarrary[cur])
             {
                 while(start>=0)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        if (arr[start]==arr[cur])
+                        if (arrarrary[start]==arrarrary[cur])
                         {
-                            arr[cur]*=2;
-                            arr[start]=0;
+                            arrarrary[cur]*=2;
+                            arrarrary[start]=0;
                         }
                         break;
                     }
@@ -91,10 +91,10 @@ void down(int *arr)
             {
                 while(start>=0)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        arr[cur]=arr[start];
-                        arr[start]=0;
+                        arrarrary[cur]=arrarrary[start];
+                        arrarrary[start]=0;
                         break;
                     }
                     start-=3;
@@ -104,7 +104,7 @@ void down(int *arr)
     }
 }
  
-void left(int *arr)
+void left(int *arrarrary)
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -113,16 +113,16 @@ void left(int *arr)
             int cur=i*3+j;
             int start=3*i+j+1;
  
-            if (arr[cur])
+            if (arrarrary[cur])
             {
                 while(start<=3*i+2)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        if (arr[start]==arr[cur])
+                        if (arrarrary[start]==arrarrary[cur])
                         {
-                            arr[cur]*=2;
-                            arr[start]=0;
+                            arrarrary[cur]*=2;
+                            arrarrary[start]=0;
                         }
                         break;
                     }
@@ -133,10 +133,10 @@ void left(int *arr)
             {
                 while(start<=3*i+2)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        arr[cur]=arr[start];
-                        arr[start]=0;
+                        arrarrary[cur]=arrarrary[start];
+                        arrarrary[start]=0;
                         break;
                     }
                     start++;
@@ -146,7 +146,7 @@ void left(int *arr)
     }
 }
  
-void right(int *arr)
+void right(int *arrarrary)
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -155,16 +155,16 @@ void right(int *arr)
             int cur=i*3+j;
             int start=cur-1;
  
-            if (arr[cur])
+            if (arrarrary[cur])
             {
                 while(start>=i*3)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        if (arr[start]==arr[cur])
+                        if (arrarrary[start]==arrarrary[cur])
                         {
-                            arr[cur]*=2;
-                            arr[start]=0;
+                            arrarrary[cur]*=2;
+                            arrarrary[start]=0;
                         }
  
                         break;
@@ -176,10 +176,10 @@ void right(int *arr)
             {
                 while(start>=3*i)
                 {
-                    if (arr[start])
+                    if (arrarrary[start])
                     {
-                        arr[cur]=arr[start];
-                        arr[start]=0;
+                        arrarrary[cur]=arrarrary[start];
+                        arrarrary[start]=0;
                         break;
                     }
                     start--;
@@ -189,7 +189,7 @@ void right(int *arr)
     }
 }
 
-bool check(int *arr)
+bool check(int *arrarrary)
 {
     bool flag=false;
 
@@ -199,7 +199,7 @@ bool check(int *arr)
         int temp[9];
         for (int i = 0; i < 9; ++i)
         {
-            temp[i]=arr[i];
+            temp[i]=arrarrary[i];
         }
 
 
@@ -208,7 +208,7 @@ bool check(int *arr)
             up(temp);
             for (int i = 0; i < 9; ++i)
             {
-                if (temp[i]!=arr[i])
+                if (temp[i]!=arrarrary[i])
                 {
                     return true;
                 }
@@ -219,7 +219,7 @@ bool check(int *arr)
             down(temp);
             for (int i = 0; i < 9; ++i)
             {
-                if (temp[i]!=arr[i])
+                if (temp[i]!=arrarrary[i])
                 {
                     return true;
                 }
@@ -230,7 +230,7 @@ bool check(int *arr)
             left(temp);
             for (int i = 0; i < 9; ++i)
             {
-                if (temp[i]!=arr[i])
+                if (temp[i]!=arrarrary[i])
                 {
                    return true;
                 }
@@ -241,7 +241,7 @@ bool check(int *arr)
             right(temp);
             for (int i = 0; i < 9; ++i)
             {
-                if (temp[i]!=arr[i])
+                if (temp[i]!=arrarrary[i])
                 {
                     return true;
                 }
@@ -298,11 +298,11 @@ int main()
         wrefresh(win[i]);
     }
  
-    int arr[9];
-    memset(arr,0,sizeof(arr));
+    int arrarrary[9];
+    memset(arrarrary,0,sizeof(arrarrary));
     int Randindex;
     Randindex=rand()%9;
-    arr[Randindex]=2;
+    arrarrary[Randindex]=2;
     mvwprintw(win[Randindex+1],1,3,"2");
     wrefresh(win[Randindex+1]);
     int size=8;
@@ -314,7 +314,7 @@ int main()
 
         if (size==0)
         {     
-            if(!check(arr))
+            if(!check(arrarrary))
                 break;
         }
 
@@ -331,19 +331,19 @@ int main()
        
         if (c=='W' || c=='w')
         {
-            up(arr);
+            up(arrarrary);
         }
         else if(c=='S' || c=='s')
         {
-            down(arr);
+            down(arrarrary);
         }
         else if(c=='A' || c=='a')
         {
-            left(arr);
+            left(arrarrary);
         }
         else if(c=='D' || c=='d')
         {
-            right(arr);
+            right(arrarrary);
         }
         else if(c=='Q' || c=='q')     //UNDO CONDITION
         {
@@ -354,16 +354,16 @@ int main()
                 st.pop();
                 for (int i = 0; i < 9; ++i)
                 {
-                    arr[i]=v[i];
+                    arrarrary[i]=v[i];
                 }
  
  
                 for(int i=1;i<=9;i++)
                 {
-                    if(arr[i-1])
+                    if(arrarrary[i-1])
                     {    
-                        mvwprintw(win[i],1,3,"%d",arr[i-1]);
-                        sco+=arr[i-1];
+                        mvwprintw(win[i],1,3,"%d",arrarrary[i-1]);
+                        sco+=arrarrary[i-1];
                     }
                     else
                         mvwprintw(win[i],1,3," ");
@@ -378,7 +378,7 @@ int main()
         int k=0;
         for (int i = 0; i < 9; ++i)
         {
-            if (!arr[i])
+            if (!arrarrary[i])
             {
                 a[k++]=i;
             }
@@ -387,28 +387,28 @@ int main()
         if (k!=0)
         {
             Randindex=rand()%k;
-            arr[a[Randindex]]=2;
+            arrarrary[a[Randindex]]=2;
             size=k-1;
         }
        
         vector<int> v;
         for (int i = 0; i < 9; ++i)
         {
-            v.push_back(arr[i]);  
+            v.push_back(arrarrary[i]);  
         }
         st.push(v);
  
         for(int i=1;i<=9;i++)
         {
-            if(arr[i-1])
+            if(arrarrary[i-1])
             {
-                mvwprintw(win[i],1,3,"%d",arr[i-1]);
-                sco+=arr[i-1];
+                mvwprintw(win[i],1,3,"%d",arrarrary[i-1]);
+                sco+=arrarrary[i-1];
             }
             else
             {   
                 mvwprintw(win[i],1,3," ");
-                sco+=arr[i-1];
+                sco+=arrarrary[i-1];
             }
             wrefresh(win[i]);
             refresh();
