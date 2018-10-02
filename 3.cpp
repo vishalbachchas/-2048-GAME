@@ -259,7 +259,7 @@ int main()
     //printf("                     2048                  ");
     initscr();
     noecho();
-    long long int score=0;
+    long long int sco=0;
     mvprintw(5,58," 1024 ");
     mvprintw(25,18," Press W for UPSHIFT ");
     mvprintw(28,18," Press S for DOWNSHIFT ");
@@ -271,7 +271,7 @@ int main()
     refresh();
     box(lboard,0,0);
     mvwprintw(lboard,1,1,"      LEADERBOARD");
-    mvwprintw(lboard,2,1," RANK  USERNAME  SCORE");
+    mvwprintw(lboard,2,1," RANK  USERNAME  sco");
     mvwprintw(lboard,3,1," ");
     mvwprintw(lboard,4,1," 1     @nikhil25  1890");
     mvwprintw(lboard,5,1," 2     @dhruv167  1650");
@@ -363,7 +363,7 @@ int main()
                     if(arr[i-1])
                     {    
                         mvwprintw(win[i],1,3,"%d",arr[i-1]);
-                        score+=arr[i-1];
+                        sco+=arr[i-1];
                     }
                     else
                         mvwprintw(win[i],1,3," ");
@@ -403,17 +403,17 @@ int main()
             if(arr[i-1])
             {
                 mvwprintw(win[i],1,3,"%d",arr[i-1]);
-                score+=arr[i-1];
+                sco+=arr[i-1];
             }
             else
             {   
                 mvwprintw(win[i],1,3," ");
-                score+=arr[i-1];
+                sco+=arr[i-1];
             }
             wrefresh(win[i]);
             refresh();
         }
-        mvprintw(10,10,"SCORE : %d",score);
+        mvprintw(10,10,"sco : %d",sco);
         refresh();
     }
     getch();
