@@ -16,15 +16,15 @@
 #include <vector>
 using namespace std;
  
-void up(int arrarrary[])
+void up(long long int arrarrary[])
 {
-    for (int i = 0; i < 3; ++i)
+    for (long long int i = 0; i < 3; ++i)
     {
-        for (int j = 0; j < 2; ++j)
+        for (long long int j = 0; j < 2; ++j)
         {
             if (arrarrary[3*j+i])
             {
-                int start=i+3*j+3;
+                long long int start=i+3*j+3;
                 while(true)
                 {
                     if (arrarrary[start])
@@ -46,7 +46,7 @@ void up(int arrarrary[])
             }
             else
             {
-                int start=i+3*j+3;
+                long long int start=i+3*j+3;
                 while(start < 9)
                 {
                     if (arrarrary[start])
@@ -62,14 +62,14 @@ void up(int arrarrary[])
     }
 }
  
-void down(int *arrarrary)
+void down(long long int *arrarrary)
 {
-    for (int i = 0; i < 3; ++i)
+    for (long long int i = 0; i < 3; ++i)
     {
-        for (int j = 2; j > 0 ; --j)
+        for (long long int j = 2; j > 0 ; --j)
         {
-            int cur=3*j+i;
-            int start=3*j+i-3;
+            long long int cur=3*j+i;
+            long long int start=3*j+i-3;
  
             if (arrarrary[cur])
             {
@@ -104,14 +104,14 @@ void down(int *arrarrary)
     }
 }
  
-void left(int *arrarrary)
+void left(long long int *arrarrary)
 {
-    for (int i = 0; i < 3; ++i)
+    for (long long int i = 0; i < 3; ++i)
     {
-        for (int j = 0; j < 2; ++j)
+        for (long long int j = 0; j < 2; ++j)
         {
-            int cur=i*3+j;
-            int start=3*i+j+1;
+            long long int cur=i*3+j;
+            long long int start=3*i+j+1;
  
             if (arrarrary[cur])
             {
@@ -146,14 +146,14 @@ void left(int *arrarrary)
     }
 }
  
-void right(int *arrarrary)
+void right(long long int *arrarrary)
 {
-    for (int i = 0; i < 3; ++i)
+    for (long long int i = 0; i < 3; ++i)
     {
-        for (int j = 2; j >0 ; --j)
+        for (long long int j = 2; j >0 ; --j)
         {
-            int cur=i*3+j;
-            int start=cur-1;
+            long long int cur=i*3+j;
+            long long int start=cur-1;
  
             if (arrarrary[cur])
             {
@@ -189,15 +189,15 @@ void right(int *arrarrary)
     }
 }
 
-bool check(int *arrarrary)
+bool check(long long int *arrarrary)
 {
     bool flag=false;
 
 
-    for(int j=0;j<4;j++)
+    for(long long int j=0;j<4;j++)
     {    
-        int temp[9];
-        for (int i = 0; i < 9; ++i)
+        long long int temp[9];
+        for (long long int i = 0; i < 9; ++i)
         {
             temp[i]=arrarrary[i];
         }
@@ -206,7 +206,7 @@ bool check(int *arrarrary)
         if (j==0)
         {
             up(temp);
-            for (int i = 0; i < 9; ++i)
+            for (long long int i = 0; i < 9; ++i)
             {
                 if (temp[i]!=arrarrary[i])
                 {
@@ -217,7 +217,7 @@ bool check(int *arrarrary)
         if (j==1)
         {
             down(temp);
-            for (int i = 0; i < 9; ++i)
+            for (long long int i = 0; i < 9; ++i)
             {
                 if (temp[i]!=arrarrary[i])
                 {
@@ -228,7 +228,7 @@ bool check(int *arrarrary)
         if (j==2)
         {
             left(temp);
-            for (int i = 0; i < 9; ++i)
+            for (long long int i = 0; i < 9; ++i)
             {
                 if (temp[i]!=arrarrary[i])
                 {
@@ -239,7 +239,7 @@ bool check(int *arrarrary)
         if (j==3)
         {
             right(temp);
-            for (int i = 0; i < 9; ++i)
+            for (long long int i = 0; i < 9; ++i)
             {
                 if (temp[i]!=arrarrary[i])
                 {
@@ -254,33 +254,33 @@ bool check(int *arrarrary)
 
 
 
-int main()
+long long int main()
 {
-    //printf("                     2048                  ");
+    //prlong long intf("                     2048                  ");
     initscr();
     noecho();
-    long long int sco=0;
-    mvprintw(5,58," 1024 ");
-    mvprintw(25,18," Press W for UPSHIFT ");
-    mvprintw(28,18," Press S for DOWNSHIFT ");
-    mvprintw(31,18," Press A for LEFTSHIFT ");
-    mvprintw(34,18," Press D for RIGHTSHIFT ");
-    mvprintw(37,18," Press Q for UNDO ");
+    long long long long int sco=0;
+    mvprlong long intw(5,58," 1024 ");
+    mvprlong long intw(25,18," Press W for UPSHIFT ");
+    mvprlong long intw(28,18," Press S for DOWNSHIFT ");
+    mvprlong long intw(31,18," Press A for LEFTSHIFT ");
+    mvprlong long intw(34,18," Press D for RIGHTSHIFT ");
+    mvprlong long intw(37,18," Press Q for UNDO ");
     
     WINDOW *lboard=newwin(25,25,10,85);
     refresh();
     box(lboard,0,0);
-    mvwprintw(lboard,1,1,"      LEADERBOARD");
-    mvwprintw(lboard,2,1," RANK  USERNAME  sco");
-    mvwprintw(lboard,3,1," ");
-    mvwprintw(lboard,4,1," 1     @nikhil25  1890");
-    mvwprintw(lboard,5,1," 2     @dhruv167  1650");
-    mvwprintw(lboard,6,1," 3     @naman123  1000");
+    mvwprlong long intw(lboard,1,1,"      LEADERBOARD");
+    mvwprlong long intw(lboard,2,1," RANK  USERNAME  sco");
+    mvwprlong long intw(lboard,3,1," ");
+    mvwprlong long intw(lboard,4,1," 1     @nikhil25  1890");
+    mvwprlong long intw(lboard,5,1," 2     @dhruv167  1650");
+    mvwprlong long intw(lboard,6,1," 3     @naman123  1000");
     wrefresh(lboard);
     getch();
     WINDOW *win[10];
-    int height=4,width=8,x=50,y=10;
-    for(int i=1;i<=9;i++)
+    long long int height=4,width=8,x=50,y=10;
+    for(long long int i=1;i<=9;i++)
     {
         win[i]=newwin(height,width,y,x);
         x+=7;
@@ -292,21 +292,21 @@ int main()
     }
     refresh();
  
-    for (int i = 1; i <=9; ++i)
+    for (long long int i = 1; i <=9; ++i)
     {
         box(win[i],0,0);
         wrefresh(win[i]);
     }
  
-    int arrarrary[9];
+    long long int arrarrary[9];
     memset(arrarrary,0,sizeof(arrarrary));
-    int Randindex;
+    long long int Randindex;
     Randindex=rand()%9;
     arrarrary[Randindex]=2;
-    mvwprintw(win[Randindex+1],1,3,"2");
+    mvwprlong long intw(win[Randindex+1],1,3,"2");
     wrefresh(win[Randindex+1]);
-    int size=8;
-    stack<vector<int> > st;
+    long long int size=8;
+    stack<vector<long long int> > st;
 
     while(true)
     {
@@ -319,11 +319,11 @@ int main()
         }
 
 
-        for (int i = 1; i <=9; ++i)
+        for (long long int i = 1; i <=9; ++i)
         {
             wclear(win[i]);
         }
-        for (int i = 1; i <=9; ++i)
+        for (long long int i = 1; i <=9; ++i)
         {
             box(win[i],0,0);
             wrefresh(win[i]);
@@ -349,24 +349,24 @@ int main()
         {
             if (!st.empty())
             {
-                vector<int> v;
+                vector<long long int> v;
                 v=st.top();
                 st.pop();
-                for (int i = 0; i < 9; ++i)
+                for (long long int i = 0; i < 9; ++i)
                 {
                     arrarrary[i]=v[i];
                 }
  
  
-                for(int i=1;i<=9;i++)
+                for(long long int i=1;i<=9;i++)
                 {
                     if(arrarrary[i-1])
                     {    
-                        mvwprintw(win[i],1,3,"%d",arrarrary[i-1]);
+                        mvwprlong long intw(win[i],1,3,"%d",arrarrary[i-1]);
                         sco+=arrarrary[i-1];
                     }
                     else
-                        mvwprintw(win[i],1,3," ");
+                        mvwprlong long intw(win[i],1,3," ");
                     wrefresh(win[i]);
                 }
             }
@@ -374,9 +374,9 @@ int main()
             continue;
         }
  
-        int a[10];
-        int k=0;
-        for (int i = 0; i < 9; ++i)
+        long long int a[10];
+        long long int k=0;
+        for (long long int i = 0; i < 9; ++i)
         {
             if (!arrarrary[i])
             {
@@ -391,36 +391,36 @@ int main()
             size=k-1;
         }
        
-        vector<int> v;
-        for (int i = 0; i < 9; ++i)
+        vector<long long int> v;
+        for (long long int i = 0; i < 9; ++i)
         {
             v.push_back(arrarrary[i]);  
         }
         st.push(v);
  
-        for(int i=1;i<=9;i++)
+        for(long long int i=1;i<=9;i++)
         {
             if(arrarrary[i-1])
             {
-                mvwprintw(win[i],1,3,"%d",arrarrary[i-1]);
+                mvwprlong long intw(win[i],1,3,"%d",arrarrary[i-1]);
                 sco+=arrarrary[i-1];
             }
             else
             {   
-                mvwprintw(win[i],1,3," ");
+                mvwprlong long intw(win[i],1,3," ");
                 sco+=arrarrary[i-1];
             }
             wrefresh(win[i]);
             refresh();
         }
-        mvprintw(10,10,"sco : %d",sco);
+        mvprlong long intw(10,10,"sco : %d",sco);
         refresh();
     }
     getch();
-    mvprintw(30,58,"GAME OVER!!!!!");
+    mvprlong long intw(30,58,"GAME OVER!!!!!");
     WINDOW *Over=newwin(15,40,25,50);
     box(Over,0,0);
-    mvwprintw(Over,26,51,"Enter your name : ");
+    mvwprlong long intw(Over,26,51,"Enter your name : ");
     wrefresh(Over);
 
     getch();
