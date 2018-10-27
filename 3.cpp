@@ -12,10 +12,10 @@
 #include "iostream"
 #include "cstring"
 #include <ncurses.h>
-#include <stack>
 #include <vector>
+#include<bits/stdc++.h>
 using namespace std;
- 
+ //comment should be there
 void up(long long int arrarrary[])
 {
     for (long long int i = 0; i < 3; ++i)
