@@ -12,8 +12,8 @@
 #include "iostream"
 #include "cstring"
 #include <ncurses.h>
-#include <stack>
 #include <vector>
+#include<bits/stdc++.h>
 using namespace std;
  
 void up(long long int arrarrary[])
