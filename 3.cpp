@@ -1,7 +1,7 @@
 /*
 
 
-               2048 GAMEs
+               2048 GAME
 
 
     Created by Vishal Bachchas 2K16/SE/092
@@ -14,7 +14,6 @@
 #include <ncurses.h>
 #include <stack>
 #include <vector>
-#include<iostream.h>
 using namespace std;
  
 void up(long long int arrarrary[])
