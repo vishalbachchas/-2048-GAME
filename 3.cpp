@@ -4,7 +4,7 @@
                2048 GAME
 
 
-    Created by Vishal Bachchas 2K16/SE/092
+    Created by Vishal Bachchas DTU/2K16/SE/092
 
 */
 #include <stdio.h>
