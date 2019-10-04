@@ -1,7 +1,7 @@
 /*
 
 
-               2048 GAME
+               2048 GAMEs
 
 
     Created by Vishal Bachchas 2K16/SE/092
